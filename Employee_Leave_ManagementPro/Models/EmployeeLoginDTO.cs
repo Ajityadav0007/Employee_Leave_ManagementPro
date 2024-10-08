@@ -4,5 +4,6 @@
     {
         public string Email { get; set; }         // Employee Email
         public string Password { get; set; }      // Hashed Password
+
     }
 }

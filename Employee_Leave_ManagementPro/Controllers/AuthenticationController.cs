@@ -35,12 +35,14 @@ namespace Employee_Leave_ManagementPro.Controllers
             {
                 _dbContext.Employees.Add(new Employee
                 {
+
                     Name = employeeRegisterDTO.Name,
                     Email = employeeRegisterDTO.Email,
                     Password = employeeRegisterDTO.Password,
                     Department = employeeRegisterDTO.Department,
                     Designation = employeeRegisterDTO.Designation,
                     Role = employeeRegisterDTO.Role
+
                 });
 
                 _dbContext.SaveChanges();

@@ -9,6 +9,7 @@ namespace Employee_Leave_ManagementPro.DBContext
         {
 
         }
+
         public DbSet<Employee> Employees { get; set; }
     }
 }
