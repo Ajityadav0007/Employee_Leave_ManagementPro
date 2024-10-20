@@ -1,5 +1,4 @@
-﻿using Employee_Leave_ManagementPro.DBContext;
-using Employee_Leave_ManagementPro.Models;
+﻿using Employee_Leave_ManagementPro.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -30,27 +29,40 @@ namespace Employee_Leave_ManagementPro.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var employee = _dbContext.Employees.FirstOrDefault(x => x.Email == employeeRegisterDTO.Email);
+            var employee = _dbContext.Employees1.FirstOrDefault(x => x.Email == employeeRegisterDTO.Email);
             if (employee == null) //the employee is not exist then add the new employee
             {
-                _dbContext.Employees.Add(new Employee
+                var newEmployee = new Employee
                 {
-
                     Name = employeeRegisterDTO.Name,
                     Email = employeeRegisterDTO.Email,
-                    Password = employeeRegisterDTO.Password,
+                    Password = employeeRegisterDTO.Password, // Ensure this is hashed in production
                     Department = employeeRegisterDTO.Department,
                     Designation = employeeRegisterDTO.Designation,
                     Role = employeeRegisterDTO.Role
+                };
 
-                });
-
+                _dbContext.Employees1.Add(newEmployee);
                 _dbContext.SaveChanges();
+
+                // Set default leave balances for the new employee
+                var leaveBalance = new LeaveBalance
+                {
+                    EmployeeID = newEmployee.EmployeeID,
+                    AnnualLeave = 12, // Set your default annual leave
+                    SickLeave = 10,    // Set your default sick leave
+                    CasualLeave = 5,   // Set your default casual leave
+                    OtherLeave = 2    // Set your default other leave if needed
+                };
+
+                _dbContext.leaveBalances.Add(leaveBalance);
+                _dbContext.SaveChanges();
+
                 return Ok(new { message = "Employee Registered Successfully" });
             }
             else
             {
-                return BadRequest(new { message = "Employee is allready Exist, with Same Email address." });
+                return BadRequest(new { message = "Employee is already Exist, with Same Email address." });
             }
         }
 
@@ -59,7 +71,7 @@ namespace Employee_Leave_ManagementPro.Controllers
         [Route("Employee Login")]
         public IActionResult Login(EmployeeLoginDTO employeeLoginDTO)
         {
-            var employee = _dbContext.Employees.FirstOrDefault(x => x.Email == employeeLoginDTO.Email && x.Password == employeeLoginDTO.Password);
+            var employee = _dbContext.Employees1.FirstOrDefault(x => x.Email == employeeLoginDTO.Email && x.Password == employeeLoginDTO.Password);
             if (employee != null)
             {
                 var claims = new[]
@@ -106,4 +118,3 @@ namespace Employee_Leave_ManagementPro.Controllers
 
     }
 }
-

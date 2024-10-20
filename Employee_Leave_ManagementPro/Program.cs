@@ -1,7 +1,7 @@
-
-using Employee_Leave_ManagementPro.DBContext;
+using Employee_Leave_ManagementPro.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
@@ -16,15 +16,18 @@ namespace Employee_Leave_ManagementPro
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+            builder.Services.AddDbContext<EmployeeDbcontext>(Options =>
+            Options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            builder.Services.AddDbContext<EmployeeDbcontext>(option =>
-            option.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection"))); /// injecting Database context
+
 
             // Configure JWT Authentication
-          
+
             builder.Services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -42,6 +45,8 @@ namespace Employee_Leave_ManagementPro
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
                 };
             });
+
+
 
             builder.Services.AddAuthorization();
 
