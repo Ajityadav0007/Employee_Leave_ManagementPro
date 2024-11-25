@@ -15,7 +15,7 @@ Find out more about me & feel free to connect with me here:
 	<a href="https://twitter.com/uvshendage" target="_blank">
 		<img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" />
 	</a>
-	<a href="https://www.instagram.com/uttam_shendage_us7/" target="_blank">
+	<a href="https://www.instagram.com/mr.ajuu_yadav0307/" target="_blank">
 		<img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
 	</a>
 <!-- 	<a href="https://dev.to/raman_boddula">
