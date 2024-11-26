@@ -79,7 +79,7 @@ I specialize in building modern web applications using ASP.NET Core, C#, and SQL
 2. **Project 2 - Bank Management API**: Built with SignalR and ASP.NET Core to handle transactions.
 3. **Project 3 - SQL Optimizations**: Optimizing queries and database performance for enterprise applications.
 
-You can explore more of my projects on [GitHub](https://github.com/ajityadav).
+You can explore more of my projects on [GitHub](https://github.com/Ajityadav0007/Employee_Leave_Management_Project).
 
 ---
 
