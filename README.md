@@ -29,7 +29,7 @@ Reach out to me on any of the platforms below – I'm always open to discussing 
   </p>
   <!-- Link to Naqri Profile -->
   <p align="center">
-    <a href="https://naqri.com/ajityadav" target="_blank" style="text-decoration: none; color: #0A66C2; font-size: 1em;">
+    <a href="https://www.naukri.com/mnjuser/profile" target="_blank" style="text-decoration: none; color: #0A66C2; font-size: 1em;">
       <b>View my Naqri Profile</b>
     </a>
   </p>
