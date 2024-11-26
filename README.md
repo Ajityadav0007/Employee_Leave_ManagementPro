@@ -23,7 +23,24 @@ Reach out to me on any of the platforms below – I'm always open to discussing 
   <a href="mailto:aj1221yadav@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
+
+  <div align="center">
+  <br>
+  <p align="center" style="font-size: 1.2em; font-weight: bold;">Visitors Count</p>
+  <p align="center">
+    <img align="center" src="https://profile-counter.glitch.me/{ajityadav}/count.svg" alt="Visitor Count"/>
+  </p>
+  <br>
+  <!-- Link to Naqri Profile -->
+  <p align="center">
+    <a href="https://naqri.com/ajityadav" target="_blank" style="text-decoration: none; color: #0A66C2; font-size: 1em;">
+      <b>View my Naqri Profile</b>
+    </a>
+  </p>
+</div>
+
 </p>
+
 
 ---
 
